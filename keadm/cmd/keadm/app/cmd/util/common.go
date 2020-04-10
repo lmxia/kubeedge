@@ -344,6 +344,7 @@ func installKubeEdge(componentType types.ComponentType, arch string, version str
 			//Download the tar from repo
 			dwnldURL := fmt.Sprintf("cd %s && wget -k --no-check-certificate --progress=bar:force %s/v%s/%s",
 				KubeEdgePath, KubeEdgeDownloadURL, version, filename)
+			fmt.Println("start download kubeedge..%s", dwnldURL)
 			if _, err := runCommandWithShell(dwnldURL); err != nil {
 				return err
 			}
